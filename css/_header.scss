@@ -1,0 +1,48 @@
+.header {
+ grid-area: header;
+ position: fixed;
+ text-align: center;
+
+ &__icon {
+  max-width: 200px;
+  margin-bottom: 1em;
+ }
+
+ &__title {
+  line-height: 1em;
+  max-width: 241px;
+  margin-bottom: 0.6em;
+ }
+
+ &__subtitle {
+  color: $rmg-red;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  top: 20em;
+ }
+}
+
+.header__title,
+nav {
+ text-align: left;
+}
+
+.nav {
+ display: block;
+ margin-top: 7em;
+
+ &__menu {
+   list-style-type: none;
+   margin-block-start: 0;
+   padding-inline-start: 0;
+   
+   a {
+     color: $rmg-red;
+
+     &:visited {
+       color: $rmg-red;
+     }
+   }
+ }
+}
