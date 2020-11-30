@@ -3,46 +3,89 @@
  position: fixed;
  text-align: center;
 
+ @include breakpoint(medium-small) {
+  position: static;
+ }
+
  &__icon {
   max-width: 200px;
   margin-bottom: 1em;
+
+  @include breakpoint(medium-small) {
+   width: 150px;
+  }
  }
 
  &__title {
   line-height: 1em;
   max-width: 241px;
   margin-bottom: 0.6em;
+
+  @include breakpoint(medium-small) {
+   max-width: none;
+  }
  }
 
  &__subtitle {
   color: $rmg-red;
   text-transform: uppercase;
   font-weight: 400;
-  letter-spacing: 0.13em;
+  font-size: 1em;
+  letter-spacing: 0.25em;
   top: 20em;
+
+  @include breakpoint(small) {
+   letter-spacing: 0.23em;
+  }
  }
 }
 
 .header__title,
 nav {
  text-align: left;
+
+ @include breakpoint(medium-small) {
+  text-align: center;
+  padding: 0 0.7em;
+ }
 }
 
 .nav {
  display: block;
- margin-top: 7em;
+ position: fixed;
+ top: 33em;
+
+ @include breakpoint(medium-small) {
+  margin-top: 3em;
+  padding-bottom: 1.2em;
+  padding-top: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0 4px 3px 0 rgba(255, 0, 0, 0.08);
+ }
+
+ @include breakpoint(small) {
+  margin-bottom: 2.5em;
+ }
 
  &__menu {
-   list-style-type: none;
-   margin-block-start: 0;
-   padding-inline-start: 0;
-   
-   a {
-     color: $rmg-red;
+  list-style-type: none;
+  margin-block-start: 0;
+  padding-inline-start: 0;
 
-     &:visited {
-       color: $rmg-red;
-     }
+  @include breakpoint(medium-small) {
+   display: flex;
+   justify-content: space-evenly;
+  }
+
+  a {
+   color: $rmg-red;
+
+   &:visited {
+    color: $rmg-red;
    }
+  }
  }
 }

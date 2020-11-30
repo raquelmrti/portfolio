@@ -17,17 +17,32 @@ body {
 .container-wrapper {
   width: 65%;
   margin: 0 auto;
+
+  @include breakpoint(big) {
+    width: 80%;
+  }
+
+  @include breakpoint(medium-small) {
+    width: 100%;
+  }
 }
 
 .container {
   display: grid;
   width: 100%;
   grid-template-columns: minmax(250px, 15%) auto;
-  grid-template-areas:
-    "header main";
+  grid-template-areas: "header main";
   grid-column-gap: 15%;
   margin-top: 5em;
 
+  @include breakpoint(big) {
+    grid-column-gap: 10%;
+  }
+
+  @include breakpoint(medium-small) {
+    display: block;
+    margin-top: 2em;
+  }
 }
 
 .red-bar--top,
@@ -41,13 +56,25 @@ body {
 
 .red-bar--top {
   top: 0;
+
+  @include breakpoint(medium-small) {
+    z-index: -10;
+    position: absolute;
+    height: calc(150px / 2 + 2em);
+  }
 }
 
 .red-bar--bottom {
-  bottom: 0; 
+  bottom: 0;
+
+  @include breakpoint(medium-small) {
+    display: none;
+  }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: $sans;
 }
 

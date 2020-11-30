@@ -2,10 +2,19 @@
   grid-area: main;
   justify-content: center;
 
+  @include breakpoint(medium-small) {
+    padding: 5em 5em 1em 5em;
+  }
+
+  @include breakpoint(small) {
+    padding: 1em;
+  }
+
   &__title {
     color: $rmg-red;
-    font-size: 1.6em;
+    font-size: 1.5em;
     margin-bottom: 1.2em;
+
   }
 }
 
@@ -13,13 +22,11 @@
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: auto;
-  grid-gap: 15px;
-  margin-bottom: 200px;
+  grid-gap: .6em;
+  margin-bottom: 6em;
 
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  @include breakpoint(medium) {
+    display: block;
   }
 
   &__item {
@@ -80,19 +87,32 @@
     grid-column-start: span 6;
   }
 
-  &__item--14{
+  &__item--14 {
     grid-column-start: span 11;
   }
-  
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   &__caption {
     background-color: $rmg-red-trans;
     position: absolute;
-    bottom: -20%;
     width: 100%;
     padding: 1em;
+    bottom: -20%;
     color: #fff;
-    opacity: 0;
     transition: .2s ease;
+    opacity: 0;
+
+    @include breakpoint(medium) {
+      opacity: 1;
+      position: relative;
+      top: -7px;
+      margin-bottom: 1em;
+    }
   }
 
   .gallery__item:hover .gallery__caption {
@@ -102,5 +122,16 @@
 
   &__modal {
     display: none;
+  }
+}
+
+footer {
+  font-size: .75em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3em;
+
+  @include breakpoint(medium-small){
+    margin-bottom: 0;
   }
 }
