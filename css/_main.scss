@@ -122,7 +122,52 @@
 
   &__modal {
     display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow-y: scroll;
+
+    &__content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4em 0 2em 0;
+
+      @include breakpoint(medium-small) {
+        max-width: none;
+        padding: 4em 3em 2em 3em;
+      }
+
+      @include breakpoint(small) {
+        padding: 3.5em 1em 1em 1em;
+      }
+    }
+
+    &__icon-close {
+      position: fixed;
+      height: 4em;
+      top: 3em;
+      right: 2em;
+      cursor: pointer;
+
+      @include breakpoint(medium-small) {
+        height: 3em;
+        top: 1em;
+        right: 1em;
+      }
+
+      @include breakpoint(small) {
+        height: 2em;
+      }
+    }
   }
+}
+
+.is-open {
+  display: block;
 }
 
 footer {
