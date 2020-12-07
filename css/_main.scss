@@ -18,6 +18,8 @@
   }
 }
 
+//////// GALLERY ////////
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
@@ -112,6 +114,7 @@
       position: relative;
       top: -7px;
       margin-bottom: 1em;
+      background-color: $rmg-red;
     }
   }
 
@@ -170,11 +173,107 @@
   display: block;
 }
 
+//////// SOBRE MÍ ////////
+
+.sobre-mi {
+  height: 125%;
+
+  &__intro-wrapper {
+    text-align: center;
+    margin-bottom: 2em;
+    position: relative;
+  }
+
+  &__intro {
+    position: relative;
+    display: inline-block;
+    margin-top: 1em;
+  }
+
+ &__intro::after {
+    content: "¡Encantada de conocerte!";
+    font-family: $script;
+    font-weight: 900;
+    text-align: left;
+    font-size: 2.9em;
+    line-height: 1;
+    position: absolute;
+    width: 300px;
+    top: 65%;
+    left: 45%;
+    color: $rmg-red;
+    z-index: 600;
+    transform: rotate(-10deg);
+
+    @include breakpoint(small) {
+      font-size: 2.5em;
+      left: 25%;
+      top: 69%;
+      width: 205px;
+    }
+  } 
+
+  &__intro::before {
+    content: "";
+    width: 99%;
+    height: 97.5%;
+    border: 2px solid $rmg-black;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    z-index: 400;
+  }
+
+  &__img {
+    max-width: 300px;
+    position: relative;
+    z-index: 500;
+
+    @include breakpoint(small) {
+      max-width: 200px;
+    }
+  }
+}
+
+.skills {
+  margin-top: 3em;
+
+  img {
+    width: 40px;
+    vertical-align: middle;
+  }
+
+  h4 {
+    letter-spacing: .3px;
+    border-bottom: 2px solid $rmg-red;
+    padding-bottom: .5em;
+    margin-bottom: 1.5em;
+  }
+  
+  li {
+    display: inline-block;
+    margin-bottom: 1em;
+    width: 200px;
+    font-size: .8em;
+    text-transform: uppercase;
+
+    @include breakpoint(small) {
+      width: 155px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 2.5em;
+  }
+}
+
 footer {
+  color: gray;
   font-size: .75em;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 3em;
+  margin-top: 6em;
+  margin-bottom: 4em;
 
   @include breakpoint(medium-small){
     margin-bottom: 0;
