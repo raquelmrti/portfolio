@@ -66,6 +66,10 @@ body {
     background-image: url(/img/bar-background-top.png);
     background-size: cover;
   }
+
+  @media screen and (max-width: 375px) {
+    background-position-x: -70px;
+  }
 }
 
 .red-bar--bottom {

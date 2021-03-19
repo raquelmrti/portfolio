@@ -87,6 +87,12 @@ body {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .red-bar--top {
+    background-position-x: -70px;
+  }
+}
+
 .red-bar--bottom {
   bottom: 0;
 }
