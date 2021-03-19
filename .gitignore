@@ -1,2 +1,5 @@
 img/img/
 prepros.config
+node_modules/
+package.json
+package-lock.json
