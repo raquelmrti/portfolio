@@ -518,11 +518,6 @@ footer {
 }
 
 .gallery__item--13 {
-  -ms-grid-column: span 6;
-      grid-column-start: span 6;
-}
-
-.gallery__item--14 {
   -ms-grid-column: span 11;
       grid-column-start: span 11;
 }
